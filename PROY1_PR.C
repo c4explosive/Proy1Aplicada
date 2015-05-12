@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <stdlib.h>
 #include <time.h>
+//Esto es un comentario
 void main()
 {
     char fechayhora[100];
