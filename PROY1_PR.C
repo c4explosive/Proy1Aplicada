@@ -5,8 +5,8 @@
 #include <dos.h>
 void main()
 {
-    char nombre[100];
-    int x, pv=1,i,ing=1, cpc=0,cpt=0,cpb=0,cpp=0,yp=8;
+    char nombre[100]; //Esto es para el nombre, ya que en C no permite el tipo de dato "string".
+    int pv=1,ing=1,pmm=1, cpc=0,cpt=0,cpb=0,cpp=0,yp=8;
     float atotal=0,total=0,menor=0,mayor=0;
     long placa;
     char m,t,cont;
@@ -33,14 +33,15 @@ void main()
 	    gotoxy(5,16);printf("CANTIDAD DE PLACA TAXI: %d",cpt);
 	    gotoxy(5,17);printf("CANTIDAD DE PLACA DE BUSES: %d",cpb);
 	    gotoxy(5,18);printf("CANTIDAD DE PLACA PARTICULARES: %d",cpp);
-	    gotoxy(5,19);printf("TOTAL RECOLECTADO: %f", atotal);
+	    gotoxy(5,19);printf("TOTAL RECOLECTADO: %.2f", atotal);
 	    gotoxy(5,20);printf("NOMBRE DEL PROPIETARIO: ");
-	    gotoxy(5,21);printf("TOTAL DE DINERO PAGADO (MAYOR): %f",mayor);
+	    gotoxy(5,21);printf("TOTAL DE DINERO PAGADO (MAYOR): %.2f",mayor);
 	    gotoxy(5,22);printf("NOMBRE DEL PROPIETARIO:  ");
-	    gotoxy(5,23);printf("TOTAL DE DINERO PAGADO (MENOR): %f",menor);
+	    gotoxy(5,23);printf("TOTAL DE DINERO PAGADO (MENOR): %.2f",menor);
 	    ing=0;
 	}
 	/*******************LECTURA****************************************/
+	//FIXME: IMPRIMIR TODO DE UNA SOLA VEZ o POCO a POCO
 	 do
 	 {
 	     gotoxy(5,24);clreol();printf("Escoja el tipo de vehiculo: C=Comercial; T=Taxi; B=buses; P=particulares: ");
@@ -63,8 +64,8 @@ void main()
 				    cpp++;
 				    gotoxy(5,18);printf("CANTIDAD DE PLACA PARTICULARES: %d",cpp);pv=1;
 				    break;
-		default: gotoxy(5,24);clreol(); printf("La opcion elegida no existe"); pv=0;
-	     }   
+		default: gotoxy(5,24);clreol(); printf("La opcion elegida no existe"); pv=0; //FIXME: ESTO NO SE MUESTRA
+	     }
 	 }while(pv==0);
 	gotoxy(5,24); clreol(); printf("Ingrese el numero de placa: ");
 	scanf("%ld", &placa);
@@ -74,8 +75,37 @@ void main()
 	gotoxy(6,yp); printf("%s", nombre);
 	gotoxy(5,24); clreol(); printf("Ingrese el total de dinero pagado: ");
 	scanf("%f", &total);
+	/***************************COMPARACI¢N******************************************/
+	gotoxy(66,yp); printf("%.2f",total);
+	atotal+=total;
+	gotoxy(5,19);printf("TOTAL RECOLECTADO: %.2f", atotal);
+	if(pmm)
+	{
+	    mayor=total;
+	    gotoxy(5,20);printf("NOMBRE DEL PROPIETARIO: %s", nombre);
+	    gotoxy(5,21);printf("TOTAL DE DINERO PAGADO (MAYOR): %.2f",mayor);
+	    menor=total;
+	    gotoxy(5,22);printf("NOMBRE DEL PROPIETARIO:  %s", nombre);
+	    gotoxy(5,23);printf("TOTAL DE DINERO PAGADO (MENOR): %.2f",menor);
+	    pmm=0;
+	}
+	else
+	{
+	    if(total>mayor)
+	    {
+		 mayor=total;
+		 gotoxy(5,20);printf("NOMBRE DEL PROPIETARIO: %s", nombre);
+		 gotoxy(5,21);printf("TOTAL DE DINERO PAGADO (MAYOR): %.2f",mayor);
+	    }
+	    if(total<menor)
+	    {
+		menor=total;
+		gotoxy(5,22);printf("NOMBRE DEL PROPIETARIO:  %s", nombre);
+		gotoxy(5,23);printf("TOTAL DE DINERO PAGADO (MENOR): %.2f",menor);
+	    }
+	}
 	yp++;
-	gotoxy(5,24); clreol(); printf("¿Desea continuar? S/n: ");
+	gotoxy(5,24); clreol(); printf("¨Desea continuar? S/n: ");
 	cont=getche();
     } while(cont=='S' || cont=='s');
     getch();
