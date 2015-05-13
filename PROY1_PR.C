@@ -1,3 +1,4 @@
+//TODO: PRESENTACIÃ“N EN COMENTARIO
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
@@ -14,7 +15,7 @@ void main()
     clrscr();
     do
     {
-	gotoxy(32,2); printf("MUNICIPIO DE PANAMµ");
+	gotoxy(32,2); printf("MUNICIPIO DE PANAMÂµ");
 	gotoxy(27,3); printf("INFORME DE PLACAS VEHICULARES");
 	/*******************HORA******************************/
 	gotoxy(1,4);
@@ -23,8 +24,8 @@ void main()
 	/*******************ENCABEZADO*************************************/
 	gotoxy(5,6); printf("NOMBRE DEL");gotoxy(5,7); printf("PROPIETARIO");
 	gotoxy(23,6); printf("TIPO");
-	gotoxy(34,6); printf("DESCRIPCI¢N");
-	gotoxy(50,6); printf("NéMERO DE");gotoxy(52,7); printf("PLACA");
+	gotoxy(34,6); printf("DESCRIPCIÂ¢N");
+	gotoxy(50,6); printf("NÃ©MERO DE");gotoxy(52,7); printf("PLACA");
 	gotoxy(65,6); printf("CANTIDAD");gotoxy(66,7); printf("PAGADA");
 	/*******************INFO GENERAL***********************************/
 	if(ing)
@@ -75,7 +76,7 @@ void main()
 	gotoxy(6,yp); printf("%s", nombre);
 	gotoxy(5,24); clreol(); printf("Ingrese el total de dinero pagado: ");
 	scanf("%f", &total);
-	/***************************COMPARACI¢N******************************************/
+	/***************************COMPARACIÂ¢N******************************************/
 	gotoxy(66,yp); printf("%.2f",total);
 	atotal+=total;
 	gotoxy(5,19);printf("TOTAL RECOLECTADO: %.2f", atotal);
@@ -105,7 +106,7 @@ void main()
 	    }
 	}
 	yp++;
-	gotoxy(5,24); clreol(); printf("¨Desea continuar? S/n: ");
+	gotoxy(5,24); clreol(); printf("Â¨Desea continuar? S/n: ");
 	cont=getche();
     } while(cont=='S' || cont=='s');
     getch();
