@@ -1,4 +1,27 @@
-//TODO: PRESENTACIÓN EN COMENTARIO
+/*
+ 	Universidad Tecnológica de Panamá
+   Facultad de Ingeniería en Sistemas Computacionales
+   	Ingeniería en Sistemas y Computación
+ 
+ 
+      Herramientas de Programación Aplicada II
+ 
+ 
+  		Proyecto no.1
+  	Conceptos básicos del lenguaje C
+ 
+ 
+  	Prof.: Ing. Janitza de Justiniani
+ 
+ 	  Angel Espinosa 8-905-1352
+ 	  Heidys Miranda 4-777-1525
+ 	  María T. Rodríguez 8-900-1207
+ 
+ 		  1-IL-121
+
+		  13/5/15
+ 
+*/
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
@@ -43,41 +66,23 @@ void main()
 	}
 	/*******************LECTURA****************************************/
 	//FIXME: IMPRIMIR TODO DE UNA SOLA VEZ o POCO a POCO
-	 do
-	 {
+	do
+	{
 	     gotoxy(5,24);clreol();printf("Escoja el tipo de vehiculo: C=Comercial; T=Taxi; B=buses; P=particulares: ");
 	     m=getche();
 	     switch(m)
 	     {
-		case 'c': case 'C': gotoxy(24,yp);printf("C"); gotoxy(35,yp);printf("Comercial");pv=1;
-				    cpc++;
-				    gotoxy(5,15);printf("CANTIDAD DE PLACA COMERCIAL: %d",cpc);pv=1;
-				    break;
-		case 't': case 'T': gotoxy(24,yp);printf("T"); gotoxy(35,yp);printf("Taxi");pv=1;
-				    cpt++;
-				    gotoxy(5,16);printf("CANTIDAD DE PLACA TAXI: %d",cpt);pv=1;
-				    break;
-		case 'b': case 'B': gotoxy(24,yp);printf("B"); gotoxy(35,yp);printf("Buses");pv=1;
-				    cpb++;
-				    gotoxy(5,17);printf("CANTIDAD DE PLACA DE BUSES: %d",cpb);pv=1;
-				    break;
-		case 'p': case 'P': gotoxy(24,yp);printf("P"); gotoxy(35,yp);printf("Particular");pv=1;
-				    cpp++;
-				    gotoxy(5,18);printf("CANTIDAD DE PLACA PARTICULARES: %d",cpp);pv=1;
-				    break;
-		default: gotoxy(5,24);clreol(); printf("La opcion elegida no existe"); pv=0; //FIXME: ESTO NO SE MUESTRA
+	     	case 'c': case 'C': case 't': case 'T': case 'b': case 'B': case 'p': case 'P': pv=1; break;
+	     	default: gotoxy(5,24);clreol(); printf("La opcion elegida no existe"); pv=0; //FIXME: ESTO NO SE MUESTRA
 	     }
-	 }while(pv==0);
+	}while(pv==0);
 	gotoxy(5,24); clreol(); printf("Ingrese el numero de placa: ");
 	scanf("%ld", &placa);
-	gotoxy(51,yp); printf("%d", placa);
 	gotoxy(5,24); clreol(); printf("Ingrese su nombre: ");
 	scanf("%s",nombre);
-	gotoxy(6,yp); printf("%s", nombre);
 	gotoxy(5,24); clreol(); printf("Ingrese el total de dinero pagado: ");
 	scanf("%f", &total);
-	/***************************COMPARACI¢N******************************************/
-	gotoxy(66,yp); printf("%.2f",total);
+	/***************************COMPARACI¢N E IMPRESION******************************************/
 	atotal+=total;
 	gotoxy(5,19);printf("TOTAL RECOLECTADO: %.2f", atotal);
 	if(pmm)
@@ -104,7 +109,29 @@ void main()
 		gotoxy(5,22);printf("NOMBRE DEL PROPIETARIO:  %s", nombre);
 		gotoxy(5,23);printf("TOTAL DE DINERO PAGADO (MENOR): %.2f",menor);
 	    }
+	}	
+	switch(m)
+	{
+		case 'c': case 'C': gotoxy(24,yp);printf("C"); gotoxy(35,yp);printf("Comercial");
+				    cpc++;
+				    break;
+		case 't': case 'T': gotoxy(24,yp);printf("T"); gotoxy(35,yp);printf("Taxi");
+				    cpt++;
+				    break;
+		case 'b': case 'B': gotoxy(24,yp);printf("B"); gotoxy(35,yp);printf("Buses");
+				    cpb++;
+				    break;
+		case 'p': case 'P': gotoxy(24,yp);printf("P"); gotoxy(35,yp);printf("Particular");
+				    cpp++;
+				    break;
 	}
+	gotoxy(51,yp); printf("%d", placa);
+	gotoxy(6,yp); printf("%s", nombre);
+	gotoxy(66,yp); printf("%.2f",total);
+	gotoxy(5,15);printf("CANTIDAD DE PLACA COMERCIAL: %d",cpc);
+	gotoxy(5,16);printf("CANTIDAD DE PLACA TAXI: %d",cpt);
+	gotoxy(5,17);printf("CANTIDAD DE PLACA DE BUSES: %d",cpb);
+	gotoxy(5,18);printf("CANTIDAD DE PLACA PARTICULARES: %d",cpp);
 	yp++;
 	gotoxy(5,24); clreol(); printf("¨Desea continuar? S/n: ");
 	cont=getche();
