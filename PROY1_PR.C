@@ -65,17 +65,16 @@ void main()
 	    ing=0;
 	}
 	/*******************LECTURA****************************************/
-	//FIXME: IMPRIMIR TODO DE UNA SOLA VEZ o POCO a POCO
 	do
 	{
 	     gotoxy(5,24);clreol();printf("Escoja el tipo de vehiculo: C=Comercial; T=Taxi; B=buses; P=particulares: ");
 	     m=getche();
 	     switch(m)
 	     {
-	     	case 'c': case 'C': case 't': case 'T': case 'b': case 'B': case 'p': case 'P': pv=1; break;
-	     	default: gotoxy(5,24);clreol(); printf("La opcion elegida no existe"); pv=0; //FIXME: ESTO NO SE MUESTRA
+		case 'c': case 'C': case 't': case 'T': case 'b': case 'B': case 'p': case 'P': pv=1; break;
+		default: gotoxy(5,24);clreol(); printf("La opcion elegida no existe"); pv=0; getch();
 	     }
-	}while(pv==0);
+	} while(pv==0);
 	gotoxy(5,24); clreol(); printf("Ingrese el numero de placa: ");
 	scanf("%ld", &placa);
 	gotoxy(5,24); clreol(); printf("Ingrese su nombre: ");
@@ -109,7 +108,7 @@ void main()
 		gotoxy(5,22);printf("NOMBRE DEL PROPIETARIO:  %s", nombre);
 		gotoxy(5,23);printf("TOTAL DE DINERO PAGADO (MENOR): %.2f",menor);
 	    }
-	}	
+	}
 	switch(m)
 	{
 		case 'c': case 'C': gotoxy(24,yp);printf("C"); gotoxy(35,yp);printf("Comercial");
