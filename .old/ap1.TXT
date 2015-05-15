@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <conio.h>
+void main(){
+	clrscr();
+	gotoxy(30,5); printf("MUNICIPIO DE PANAMA");
+	gotoxy(25,7); printf("INFORME DE PLACAS VEHICULARES");
+	gotoxy(10,11);printf("FECHA: "); gotoxy(60,11);printf("HORA: ");
+	gotoxy(10,15);printf("NOMBRE DEL");
+	gotoxy(10,16);printf("PROPIETARIO ");
+	gotoxy(26,15);printf("TIPO ");
+	gotoxy(35,15);printf("DESCRIPCION ");
+	gotoxy(50,15);printf("NUMERO DE");
+	gotoxy(52,16);printf("PLACA ");
+	gotoxy(63,15);printf("CANTIDAD");
+	gotoxy(64,16);printf("PAGADA ");
+	printf("CANTIDAD DE PLACA COMERCIAL : %f ");
+	printf("CANTIDAD DE PLACA TAXI : %f ");
+	printf("CANTIDAD DE PLACA BUSES : %f ");
+	printf("CANTIDAD DE PLACA PARTICULARES : %f ");
+	printf("TOTAL RECOLECTADO : %f ");
+	getch();
+	//for(i=0; i<7; i++){
+	getch();
+}
