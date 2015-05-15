@@ -30,10 +30,9 @@
 void main()
 {
     char nombre[100]; //Esto es para el nombre, ya que en C no permite el tipo de dato "string".
-    char placa[100]; //Esto es para el nombre, ya que en C no permite el tipo de dato "string".
     int pv=1,ing=1,pmm=1, cpc=0,cpt=0,cpb=0,cpp=0,yp=8;
     float atotal=0,total=0,menor=0,mayor=0;
-    //long placa;
+    long placa;
     char m,t,cont;
     time_t lt;
     clrscr();
@@ -77,14 +76,11 @@ void main()
 	     }
 	} while(pv==0);
 	gotoxy(5,24); clreol(); printf("Ingrese el numero de placa: ");
-	scanf("%s", placa);
-	fflush(stdin);
+	scanf("%ld", &placa);
 	gotoxy(5,24); clreol(); printf("Ingrese su nombre: ");
 	scanf("%s",nombre);
-	fflush(stdin);
 	gotoxy(5,24); clreol(); printf("Ingrese el total de dinero pagado: ");
 	scanf("%f", &total);
-	fflush(stdin);
 	/***************************COMPARACI¢N E IMPRESION******************************************/
 	atotal+=total;
 	gotoxy(5,19);printf("TOTAL RECOLECTADO: %.2f", atotal);
@@ -128,7 +124,7 @@ void main()
 				    cpp++;
 				    break;
 	}
-	gotoxy(51,yp); printf("%s", placa);
+	gotoxy(51,yp); printf("%d", placa);
 	gotoxy(6,yp); printf("%s", nombre);
 	gotoxy(66,yp); printf("%.2f",total);
 	gotoxy(5,15);printf("CANTIDAD DE PLACA COMERCIAL: %d",cpc);
