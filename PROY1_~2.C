@@ -99,11 +99,11 @@ void main()
 	if(pmm)
 	{
 	    mayor=total;
-	    gotoxy(5,20);printf("NOMBRE DEL PROPIETARIO: %s", nombre);
-	    gotoxy(5,21);printf("TOTAL DE DINERO PAGADO (MAYOR): %.2f",mayor);
+	    gotoxy(5,20);clreol();printf("NOMBRE DEL PROPIETARIO: %s", nombre);
+	    gotoxy(5,21);clreol();printf("TOTAL DE DINERO PAGADO (MAYOR): %.2f",mayor);
 	    menor=total;
-	    gotoxy(5,22);printf("NOMBRE DEL PROPIETARIO:  %s", nombre);
-	    gotoxy(5,23);printf("TOTAL DE DINERO PAGADO (MENOR): %.2f\n",menor);
+	    gotoxy(5,22);clreol();printf("NOMBRE DEL PROPIETARIO:  %s", nombre);
+	    gotoxy(5,23);clreol();printf("TOTAL DE DINERO PAGADO (MENOR): %.2f\n",menor);
 	    pmm=0;
 	}
 	else
@@ -111,14 +111,14 @@ void main()
 	    if(total>mayor)
 	    {
 		 mayor=total;
-		 gotoxy(5,20);printf("NOMBRE DEL PROPIETARIO: %s", nombre);
-		 gotoxy(5,21);printf("TOTAL DE DINERO PAGADO (MAYOR): %.2f",mayor);
+		 gotoxy(5,20);clreol();printf("NOMBRE DEL PROPIETARIO: %s", nombre);
+		 gotoxy(5,21);clreol();printf("TOTAL DE DINERO PAGADO (MAYOR): %.2f",mayor);
 	    }
 	    if(total<menor)
 	    {
 		menor=total;
-		gotoxy(5,22);printf("NOMBRE DEL PROPIETARIO:  %s", nombre);
-		gotoxy(5,23);printf("TOTAL DE DINERO PAGADO (MENOR): %.2f",menor);
+		gotoxy(5,22);clreol();printf("NOMBRE DEL PROPIETARIO:  %s", nombre);
+		gotoxy(5,23);clreol();printf("TOTAL DE DINERO PAGADO (MENOR): %.2f",menor);
 	    }
 	}
 
